@@ -14,108 +14,81 @@ int main(void)
 	
 
 	valid_test();
-	//LIMB_t a_dat[300] = { 0, };
-	//LIMB_t b_dat[300] = { 0, };
-	//LIMB_t raw_a_dat[300] = { 0, };
-	//LIMB_t raw_b_dat[300] = { 0, };
-	//LIMB_t c_dat[MAX_BINT_LEN] = { 0, };
-	//LIMB_t d_dat[MAX_BINT_LEN] = { 0, };
-	//D_BINT_t a;
-	//D_BINT_t b;
-	//D_BINT_t c;
-	//D_BINT_t d;
-	//D_BINT_t raw_a;
-	//D_BINT_t raw_b;
-	////BINT_t b;
-	////LIMB_t b_dat[6];
-	////LIMB_t c_dat[MAX_BINT_LEN] = { 0, };
+	/*LIMB_t a_dat[300] = { 0, };
+	LIMB_t b_dat[300] = { 0, };
+	LIMB_t c_dat[MAX_BINT_LEN] = { 0, };
+	LIMB_t d_dat[MAX_BINT_LEN] = { 0, };
+	D_BINT_t a;
+	D_BINT_t b;
+	D_BINT_t c;
+	D_BINT_t d;
+	*/
+	/* Extreme case */
+	/*a->len = 11;
+	b->len = 1;
+	a->sig = POS_SIG;
+	b->sig = NEG_SIG;
+
+	a_dat[0] = 0xffffffff;
+	a_dat[1] = 0xffffffff;
+	a_dat[2] = 0xffffffff;
+	a_dat[3] = 0xffffffff;
+	a_dat[4] = 0xffffffff;
+	a_dat[5] = 0xffffffff;
+	a_dat[6] = 0xffffffff;
+	a_dat[7] = 0xffffffff;
+	a_dat[8] = 0xffffffff;
+	a_dat[9] = 0xffffffff;
+	a_dat[10] = 0xffffffff;
+	b_dat[0] = 0x1;*/
+	//b_dat[1] = 0x2;
+	/*b_dat[1] = 0xffffffff;
+	b_dat[2] = 0xffffffff;
+	b_dat[3] = 0xffffffff;
+	b_dat[4] = 0xffffffff;
+	b_dat[5] = 0xffffffff;
+	b_dat[6] = 0xffffffff;
+	b_dat[7] = 0xffffffff;
+	b_dat[8] = 0xffffffff;
+	b_dat[9] = 0xffffffff;
+	b_dat[10] = 0xffffffff;*/
+	
+	
 	//a->dat = a_dat;
 	//b->dat = b_dat;
 	//c->dat = c_dat;
 	//d->dat = d_dat;
-	//raw_a->dat = raw_a_dat;
-	//raw_b->dat = raw_b_dat;
-	//init_input(a, b,raw_a,raw_b);
+
+
+	////
+	//////general case
+	//init_input(a, b);
+
+	//Addition(c, a, b);
+	//Subtraction(d, c, a);
 	//
-	//
-	//gen_add(c, a, b);
-	////gen_sub(c, a, b);
-	//gen_sub(d, c, a);
-	//
-	//printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-	//printf("\ninput1 \n");
+	//printf("#########################################################\n");
+	//printf("(a)\n");
 	//print_out(a);
-	//printf("\ninput2 \n");
+	//printf("(b)\n");
 	//print_out(b);
-	//printf("\noutput \n");
+	//printf("(c = a + b)\n");
 	//print_out(c);
-	//printf("\n\n");
+	//printf("(d = c - a  <=> d = b)\n");
 	//print_out(d);
-	//printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-	//
+	//printf("#########################################################\n");
+	
 	
 	//test_AddAndSub(c, a, b);
 
 	/*BINT initialization choice*/
-
-	
-
-
-	
-	//a->sig = POS_SIG;
-	//a->len = 1;
-	//b->sig = POS_SIG;
-	//b->len = 2;		
-	//a->len = max(a->len, b->len);/*계산의 편의를 위해 input 변수들의 사이즈를 맞춰줌. 짧은 input의 나머지는 0으로 채울 예정.*/
-	//b->len = max(a->len, b->len);
-
-	//a->dat = (P_LIMB_t)malloc(sizeof(LIMB_t)*(a->len));
-	//assert(a->dat != NULL);
-	//for (int i = 0; i < a->len; i++)
-	//	a->dat[i] = 0;
-	//	
-	//b->dat = (P_LIMB_t)malloc(sizeof(LIMB_t)*(b->len));
-	//assert(b->dat != NULL);
-	//for (int i = 0; i < b->len; i++)
-	//	b->dat[i] = 0;
-	//
-	//c->len = max(a->len, b->len);
-	//c->dat = (P_LIMB_t)malloc(sizeof(LIMB_t)*(c->len));
-	//assert(c->dat != NULL);
-	//for (int i = 0; i < c->len; i++)
-	//	c->dat[i] = 0;
-	//
-	///*data input space(start)*/
-	//a->dat[1] = 0x0;
-	//a->dat[0] = 0x5;
-	//b->dat[1] = 0x0;
-	//b->dat[0] = 0x30;
-	///*data input space(end)*/
-
-	//compare(a, b);
-	////mpadd(c, a, b);
-	//mpsub(c, a, b);
-	//
-	//for (int i = c->len - 1; i >= 0; i--)
-	//{
-	//	
-	//	printf("%08X ", c->dat[i]);
-	//}
-	
-
-
-
-
-
+			   
 
 	/*
 	b.sig = NEG_SIG;
 	b.len = 6;
 	b.dat = b_dat;
 	*/
-
-	
-
 
 	/*
 	add(c, a, b);

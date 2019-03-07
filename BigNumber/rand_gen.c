@@ -15,8 +15,7 @@ LIMB_t rand_gen()
 		a = (rand() & 0xff) << 24 | (rand() & 0xff) << 16 | (rand() & 0xff) << 8 | (rand() & 0xff);
 	else if (_IS_64BIT_FAST_ == 1)
 	{
-		temp = (rand() & 0xff) << 24 | (rand() & 0xff) << 16 | (rand() & 0xff) << 8 | (rand() & 0xff);
-		a = temp << 24 | (rand() & 0xff) << 24 | (rand() & 0xff) << 16 | (rand() & 0xff) << 8 | (rand() & 0xff);
+		a = ((uint64_t)rand() & 0xff) << 56 | ((uint64_t)rand() & 0xff) << 48 | ((uint64_t)rand() & 0xff) << 40 | ((uint64_t)rand() & 0xff)<<32 |(rand() & 0xff) << 24 | (rand() & 0xff) << 16 | (rand() & 0xff) << 8 | (rand() & 0xff);	
 	}
 	return a;
 }

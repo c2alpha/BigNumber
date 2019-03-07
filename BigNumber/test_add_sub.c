@@ -28,7 +28,8 @@ void valid_test()
 	while (valid)
 	{
 
-		init_input(a, b);
+		init_input(a);
+		init_input(b);
 		run_num++;
 		if ((run_num % 100000) == 0)
 			printf("%d \n",k++);

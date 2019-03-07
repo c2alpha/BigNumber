@@ -9,6 +9,7 @@ void copy(D_BINT_t des,D_BINT_t sta)
 {	
 	des->sig = sta->sig;
 	des->len = sta->len;
-	for (int i = 0; i < des->len; i++)
-		des->dat[i] = sta->dat[i];
+	memcpy(des->dat, sta->dat, sizeof(LIMB_t)*des->len);
+	/*for (int i = 0; i < des->len; i++)
+		des->dat[i] = sta->dat[i];*/
 }

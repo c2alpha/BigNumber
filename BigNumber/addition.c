@@ -72,7 +72,13 @@ void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	}
 
 	/* out의 상위 word에 0으로 차있으면 데이터를 지우고 len조정 */
-	int i = out->len - 1;
+	while (!out->dat[out->len - 1])
+		out->len--;
+	if (!out->len)
+		out->sig = ZERO_SIG;
+	
+	
+	/*int i = out->len - 1;
 	int index = 0;
 	while (out->dat[i] == 0)
 	{
@@ -83,7 +89,7 @@ void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	
 	   
 	if (out->len == 0)
-		out->sig = ZERO_SIG;
+		out->sig = ZERO_SIG;*/
 	
 	
 }

@@ -23,7 +23,7 @@ void mpsub(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2)
 	for (int i = 0; i < out->len - 1; i++)
 	{
 		out->dat[i] = in_1->dat[i] - in_2->dat[i] - carry;
-		carry = ((((in_1->dat[i] - carry) == MASK_WL) || (out->dat[i] > MASK_WL - in_2->dat[i])) ? 1 : 0);
+		carry = ((((in_1->dat[i] - carry) > MASK_WL - carry) || (out->dat[i] > MASK_WL - in_2->dat[i])) ? 1 : 0);
 	}
 
 }

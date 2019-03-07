@@ -157,5 +157,5 @@ void print_out(D_BINT_t out);
 void copy(D_BINT_t des,D_BINT_t sta);
 void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
 void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
-void init_input(D_BINT_t in1, D_BINT_t in2);
+void init_input(D_BINT_t in);
 void valid_test();
