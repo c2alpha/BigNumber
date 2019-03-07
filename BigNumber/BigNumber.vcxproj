@@ -139,6 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="addition.c" />
+    <ClCompile Include="compare.c" />
+    <ClCompile Include="core_add.c" />
+    <ClCompile Include="core_sub.c" />
+    <ClCompile Include="datcopy.c" />
+    <ClCompile Include="Initialize.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="print_out.c" />
+    <ClCompile Include="rand_gen.c" />
+    <ClCompile Include="subtraction.c" />
+    <ClCompile Include="test_add_sub.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bignum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
