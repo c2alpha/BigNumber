@@ -44,6 +44,38 @@ int compare(D_BINT_t in1, D_BINT_t in2)
 }
 
 
+//in1==in2 => 1  아니면 0 , in1과 in2의 길이는 같은 상태로 들어올거임
+int is_equal(D_BINT_t in1, D_BINT_t in2)
+{
+
+	
+
+	while (in2->len--)
+	{
+		
+		if (in1->dat[in2->len-1] != in2->dat[in2->len-1])// false
+			return 0;	
+	}
+
+	return 1;//true
+}
+
+//in1>in2 => 1, in1<in2 => -1, in1==in2 => 0
+int compare2(D_BINT_t in1, D_BINT_t in2)
+{
+	
+
+	while (in1->len--)
+	{
+		if (in1->dat[in1->len-1] > in2->dat[in1->len-1])
+			return 1;	
+		if (in1->dat[in1->len - 1] < in2->dat[in1->len - 1])
+			return -1;	
+	}
+
+	return 0;	
+}
+
 
 
 //asdasd

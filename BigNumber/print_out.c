@@ -11,8 +11,10 @@ void print_out(D_BINT_t out)
 	{
 		printf("Sig : Zero \n");
 		printf("Len : %d \n", out->len);
-		printf("data = 0\n");
-		printf("\n");
+		printf("data = ");
+		for (int i = out->len - 1; i >= 0; i--)
+			printf("%08X ", out->dat[i]);
+		printf("\n\n");
 	}
 
 	else if (out->sig == POS_SIG)

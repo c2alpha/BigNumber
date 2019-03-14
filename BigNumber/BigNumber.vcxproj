@@ -146,10 +146,14 @@
     <ClCompile Include="datcopy.c" />
     <ClCompile Include="Initialize.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="multiply.c" />
     <ClCompile Include="print_out.c" />
     <ClCompile Include="rand_gen.c" />
+    <ClCompile Include="single_mult.c" />
+    <ClCompile Include="square.c" />
     <ClCompile Include="subtraction.c" />
     <ClCompile Include="test_add_sub.c" />
+    <ClCompile Include="test_mul_squa.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bignum.h" />

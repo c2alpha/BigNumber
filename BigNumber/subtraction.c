@@ -18,6 +18,11 @@ void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	}
 	else if (in1->sig == POS_SIG && in2->sig == POS_SIG)
 	{
+		/*
+		 둘의 부호가 양수이므로 절대값의 크기를 비교하여
+		 in1이 더 작은 경우 in, in2의 자리를 바꾸어 뺄셈을 수행한다(결과의 부호는 음수)
+		 반대의 경우 그대로 뺄셈을 수행한다(결과의 부호는 양수)
+		*/
 		if (compare(in1, in2))
 		{
 			out->sig = NEG_SIG;
@@ -35,12 +40,14 @@ void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	}
 	else if (in1->sig == POS_SIG && in2->sig == NEG_SIG)
 	{
+		/*양수에서 음수를 빼는 경우로 부호는 양수이고 두 절대값을 더한것이 결과*/
 		out->sig = POS_SIG;
 		mpadd(out, in1, in2);
 
 	}
 	else if (in1->sig == NEG_SIG && in2->sig == POS_SIG)
 	{
+		/*음수에서 양수를 빼는 것으로 결과의 부호는 음수이고 절댓값을 더한다.*/
 		out->sig = NEG_SIG;
 		mpadd(out, in1, in2);
 	}
@@ -50,6 +57,10 @@ void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	}
 	else if (in1->sig == NEG_SIG && in2->sig == NEG_SIG)
 	{
+		/*
+		 in1이 더 작은 경우 두개의 자리를 바꾸어 sub를 수행한다.(결과는 양수)
+		 반대의 경우 그대로 뺄셈을 수행한다(결과 음수)
+		*/
 		if (compare(in1, in2))
 		{
 			out->sig = POS_SIG;
@@ -76,8 +87,12 @@ void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	while (!out->dat[out->len - 1])
 		out->len--;
 	if (!out->len)
+	{
 		out->sig = ZERO_SIG;
-	
+		out->len = 1;
+		out->dat[0] = 0;
+	}
+
 	
 	/*int i = out->len - 1;
 	int index = 0;

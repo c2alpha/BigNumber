@@ -48,6 +48,18 @@
     <ClCompile Include="addition.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="single_mult.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="multiply.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="square.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mul_squa.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bignum.h">

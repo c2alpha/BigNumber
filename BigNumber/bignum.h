@@ -151,11 +151,17 @@ extern "C"
 void mpadd(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2);
 void mpsub(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2);
 int compare(D_BINT_t in1, D_BINT_t in2);
-void test_AddAndSub(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
 LIMB_t rand_gen();
 void print_out(D_BINT_t out);
 void copy(D_BINT_t des,D_BINT_t sta);
 void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
 void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
 void init_input(D_BINT_t in);
+void init_output(D_BINT_t out);
 void valid_test();
+void spmult(LIMB_t* u,LIMB_t* v, LIMB_t in1, LIMB_t in2);
+void mpmul(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
+void square(D_BINT_t out, D_BINT_t in);
+int is_equal(D_BINT_t in1, D_BINT_t in2);
+int compare2(D_BINT_t in1, D_BINT_t in2);
+void valid_test_mul();
