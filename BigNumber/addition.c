@@ -10,8 +10,10 @@
 
 void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 {
-
-	out->len = max(in1->len, in2->len)+1;
+	//³ª´°¼À ÇÒ ¶§ ¹Ù²Þ
+	//out->len = max(in1->len, in2->len) + 1;
+	
+	out->len = max(in1->len, in2->len);
 
 	if (in1->sig == ZERO_SIG && in2->sig == ZERO_SIG)
 	{

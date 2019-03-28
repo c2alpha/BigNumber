@@ -11,7 +11,15 @@
 void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 {
 	
-	out->len = max(in1->len, in2->len)+1;
+	//out->len = max(in1->len, in2->len) + 1;
+	/*D_BINT_t out;
+	LIMB_t temp_dat[300] = { 0, };
+	out->dat = temp_dat;
+	copy(out, out);*/
+
+	//div 할 때 수정한거... 원래껀 add로 넘어가는 경우 때문에 최대 길이를 늘렷는데,
+	//사실상 뺄셈은 늘릴 필요가 없음 
+	out->len = max(in1->len, in2->len);
 	if (in1->sig == ZERO_SIG && in2->sig == ZERO_SIG)
 	{
 		out->sig = ZERO_SIG;
@@ -84,15 +92,16 @@ void Subtraction(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 	}
 	
 	/* out의 상위 word에 0으로 차있으면 데이터를 지우고 len조정 */
-	while (!out->dat[out->len - 1])
+	//나눗셈할땐 주석처리하기!
+	/*while (!out->dat[out->len - 1])
 		out->len--;
 	if (!out->len)
 	{
 		out->sig = ZERO_SIG;
 		out->len = 1;
 		out->dat[0] = 0;
-	}
-
+	}*/
+	
 	
 	/*int i = out->len - 1;
 	int index = 0;

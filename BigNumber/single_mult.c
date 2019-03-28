@@ -38,10 +38,10 @@ void spmult(LIMB_t* u,LIMB_t* v, LIMB_t in1, LIMB_t in2)
 		carry = 0;
 
 	
-	carry = (carry << BITSZ_HL) + ((temp&MASK_LHL)>>BITSZ_HL)
-		;//위에서 발생한 carry는 mid_val4의 상위 16비트에
-		 //더해져야 하고, mid_val2+mid_val3의 상위 16비트는
-		 //mid_val4의 하위 16비트에 더해져야 함.=> 그걸 한번에 표현
+	carry = (carry << BITSZ_HL) + ((temp&MASK_LHL)>>BITSZ_HL);
+	//위에서 발생한 carry는 mid_val4의 상위 16비트에
+	//더해져야 하고, mid_val2+mid_val3의 상위 16비트는
+	//mid_val4의 하위 16비트에 더해져야 함.=> 그걸 한번에 표현
 
 	*v = *v + ((temp&MASK_RHW) << BITSZ_HL);//mid_val2+mid_val3의 하위 16비트는
 											//x0 * y0의 상위16비트와 더해져야 함.

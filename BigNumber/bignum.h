@@ -164,4 +164,12 @@ void mpmul(D_BINT_t out, D_BINT_t in1, D_BINT_t in2);
 void square(D_BINT_t out, D_BINT_t in);
 int is_equal(D_BINT_t in1, D_BINT_t in2);
 int compare2(D_BINT_t in1, D_BINT_t in2);
-void valid_test_mul();
+void valid_test_mul(); \
+int mpdiv(D_BINT_t q, D_BINT_t r, D_BINT_t in1, D_BINT_t in2);
+void spdiv(LIMB_t* q, LIMB_t* r, LIMB_t u[2], LIMB_t v);
+void get_r(LIMB_t uu[2], LIMB_t qhat, LIMB_t v1, LIMB_t v0);
+void ShiftLeft_word(D_BINT_t a, LIMB_t len);
+LIMB_t ShiftLeft_bit(D_BINT_t temp, D_BINT_t a, LIMB_t shift);
+LIMB_t ShiftRight_bit(D_BINT_t temp, D_BINT_t a, LIMB_t shift);
+int valid_test_div();
+void c_mod(D_BINT_t x, D_BINT_t y, D_BINT_t m);

@@ -44,25 +44,7 @@ void valid_test_mul()
 		square(f, a);
 		square(g, b);
 		Subtraction(h, f, g);
-		/*printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-		printf("\na \n");
-		print_out(a);
-		printf("\nb \n");
-		print_out(b);
-		printf("\nc \n");
-		print_out(c);
-		printf("\nd \n");
-		print_out(e);
-		printf("\nf \n");
-		print_out(f);
-		printf("\ng \n");
-		print_out(g);
-		printf("\nh \n");
-		print_out(h);
-		
-		printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-*/
-			   		 	  	  	
+				   		 	  	  	
 
 		if (e->sig != h->sig)
 		{

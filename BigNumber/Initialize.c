@@ -7,8 +7,9 @@
 ==================================================================*/
 void init_input(D_BINT_t in)
 {
-	in->sig = (rand() % 3) - 1;
-	in->len = (rand() % 3) + 30;
+	//in->sig = (rand() % 3) - 1;
+	in->sig = POS_SIG;
+	in->len = (rand() % 30)+3;
 	if (in->sig == ZERO_SIG)
 	{
 		in->len = 1;

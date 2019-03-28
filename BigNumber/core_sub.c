@@ -15,12 +15,29 @@
 	   0xffffffff 에서 in2-k를 뺀 것 이 in2를 뺀 것 보다 더 크다는 것이 carry 조건이다.
 	   (in1-carry-k-(in2-k) > f...f - in2 where in1-carry-k == f...f)
 */
+
+//원래꺼
+//void mpsub(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2)
+//{
+//	/*out = in_1 - in_2*/
+//	LIMB_t carry = 0;
+//	
+//	
+//	for (int i = 0; i < out->len - 1; i++)
+//	{
+//		out->dat[i] = in_1->dat[i] - in_2->dat[i] - carry;
+//		carry = ((((in_1->dat[i] - carry) > MASK_WL - carry) || (out->dat[i] > MASK_WL - in_2->dat[i])) ? 1 : 0);
+//	}
+//
+//}
+
+//devide할 때 수정한거
 void mpsub(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2)
 {
 	/*out = in_1 - in_2*/
 	LIMB_t carry = 0;
-	
-	for (int i = 0; i < out->len - 1; i++)
+
+	for (int i = 0; i <= out->len - 1; i++)
 	{
 		out->dat[i] = in_1->dat[i] - in_2->dat[i] - carry;
 		carry = ((((in_1->dat[i] - carry) > MASK_WL - carry) || (out->dat[i] > MASK_WL - in_2->dat[i])) ? 1 : 0);

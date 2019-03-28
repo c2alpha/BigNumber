@@ -47,10 +47,11 @@ int compare(D_BINT_t in1, D_BINT_t in2)
 //in1==in2 => 1  아니면 0 , in1과 in2의 길이는 같은 상태로 들어올거임
 int is_equal(D_BINT_t in1, D_BINT_t in2)
 {
-
+	int len;
+	len = in2->len;
 	
 
-	while (in2->len--)
+	while (len--)
 	{
 		
 		if (in1->dat[in2->len-1] != in2->dat[in2->len-1])// false
@@ -63,14 +64,16 @@ int is_equal(D_BINT_t in1, D_BINT_t in2)
 //in1>in2 => 1, in1<in2 => -1, in1==in2 => 0
 int compare2(D_BINT_t in1, D_BINT_t in2)
 {
+	//	LIMB_t templen = in1->len; 이였음. 나누기 하면서 바꿈
+	LIMB_t templen = max(in1->len, in2->len);
 	
-
-	while (in1->len--)
+	while (templen)
 	{
-		if (in1->dat[in1->len-1] > in2->dat[in1->len-1])
+		if (in1->dat[templen -1] > in2->dat[templen -1])
 			return 1;	
-		if (in1->dat[in1->len - 1] < in2->dat[in1->len - 1])
+		if (in1->dat[templen - 1] < in2->dat[templen - 1])
 			return -1;	
+		templen--;
 	}
 
 	return 0;	

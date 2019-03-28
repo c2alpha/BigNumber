@@ -80,7 +80,7 @@ void mpmul(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 
 	//in1이 n digit, in2가 1로(=>1 digit) 들어왔을 경우
 	//결과의 len은 n+1이 아닌 n 이므로 필요하다.
-	while (!out->dat[out->len - 1])
+	while ((out->len != 0) && (!out->dat[out->len - 1]))
 		out->len--;
 	if (!out->len)
 	{

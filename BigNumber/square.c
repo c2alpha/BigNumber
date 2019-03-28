@@ -88,6 +88,7 @@ void square(D_BINT_t out, D_BINT_t in)
 				uv[1] += last_carry;
 				if (uv[1] < last_carry)
 					c++;
+				//c+=uv[1]<lastcarry
 				last_carry = 0;
 			}
 			

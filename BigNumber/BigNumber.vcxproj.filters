@@ -60,6 +60,24 @@
     <ClCompile Include="test_mul_squa.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="divide.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="shift.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="single_div.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_div.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Classic_mod.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="mpdivision.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bignum.h">
