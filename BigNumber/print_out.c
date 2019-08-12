@@ -23,7 +23,7 @@ void print_out(D_BINT_t out)
 		printf("Len : %d \n", out->len);
 		printf("data = ");
 		for (int i = out->len - 1; i >= 0; i--)
-			printf("%08X ", out->dat[i]);
+			printf("%08X", out->dat[i]);
 		printf("\n\n");
 	}
 
@@ -33,7 +33,7 @@ void print_out(D_BINT_t out)
 		printf("Len : %d \n", out->len);
 		printf("data = ");
 		for (int i = out->len - 1; i >= 0; i--)
-			printf("%08X ", out->dat[i]);
+			printf("%08X", out->dat[i]);
 		printf("\n\n");
 	}
 	

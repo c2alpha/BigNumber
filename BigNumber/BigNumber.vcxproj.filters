@@ -78,6 +78,45 @@
     <ClCompile Include="mpdivision.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Mont_reduction.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mont_mul.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mont.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bin_gcd.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext_Bin_gcd.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_gcd.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RTL.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LTR.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="k_ary.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_bin_exp.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="modified_k_ary.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SlidingWin.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mont_exp.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bignum.h">

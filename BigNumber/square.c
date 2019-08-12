@@ -104,7 +104,21 @@ void square(D_BINT_t out, D_BINT_t in)
 		last_carry = carry[1];
 		last_pos = i + in->len;
 	}
+	int len;
+	len = temp->len - 1;
+	while ((len >= 0) && (!temp->dat[len]))
+	{
+		len--;
+		temp->len--;
 
+	}
+	if (!temp->len)
+	{
+		temp->sig = ZERO_SIG;
+		temp->len = 1;
+		temp->dat[0] = 0;
+	}
+	copy(out, temp);
 	copy(out, temp);
 	
 }

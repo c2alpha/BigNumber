@@ -1,5 +1,23 @@
 #include "bignum.h"
 
+clock_t elapsed;
+float sec;
+#define START_WATCH \
+{\
+ elapsed = -clock(); \
+}\
+
+#define STOP_WATCH \
+{\
+ elapsed += clock();\
+ sec = (float)elapsed/CLOCKS_PER_SEC;\
+}\
+
+#define PRINT_TIME(qstr) \
+{\
+ printf("\n[%s: %.10f s]\n",qstr,sec);\
+}\
+
 void valid_test_mul()
 {
 	LIMB_t a_dat[300] = { 0, };
@@ -29,6 +47,34 @@ void valid_test_mul()
 	h->dat = h_dat;
 	int valid = 1;
 	int run_num = 0;
+	
+	
+	START_WATCH;
+	for (int i = 0; i < 100000; i++)
+	{
+		init_input(a);
+		init_input(b);
+		mpmul(a, a, a);
+		
+
+	}
+	STOP_WATCH;
+	PRINT_TIME("mul time")START_WATCH;
+	for (int i = 0; i < 100000; i++)
+	{
+		
+		init_input(a);
+		init_input(b);
+		square(a, a);
+
+	}
+	STOP_WATCH;
+	PRINT_TIME("Squaring time")
+
+
+
+
+
 	while (valid)
 	{
 		init_input(a);

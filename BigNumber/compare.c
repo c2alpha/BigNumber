@@ -4,8 +4,7 @@
 * 함수명 : compare
 * 함수 설명 : 절댓값의 크기를 비교한다.
 * 입력 : D_BINT_t 타입 구조체 2개(in1,in2)
-* 출력 : in1>=in2 인 경우 0, in1<in2인 경우 1
-			
+* 출력 : in1>=in2 인 경우 0, in1<in2인 경우 1		
 ===================================================================*/
 
 int compare(D_BINT_t in1, D_BINT_t in2)
@@ -61,6 +60,8 @@ int is_equal(D_BINT_t in1, D_BINT_t in2)
 	return 1;//true
 }
 
+
+
 //in1>in2 => 1, in1<in2 => -1, in1==in2 => 0
 int compare2(D_BINT_t in1, D_BINT_t in2)
 {
@@ -77,6 +78,14 @@ int compare2(D_BINT_t in1, D_BINT_t in2)
 	}
 
 	return 0;	
+}
+
+int is_even(D_BINT_t a)
+{
+	if (a->dat[0] & RLSB_ONE)
+		return 0;
+	else
+		return 1;
 }
 
 

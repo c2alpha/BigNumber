@@ -27,5 +27,10 @@ void mpadd(D_BINT_t out, D_BINT_t in_1, D_BINT_t in_2)
 		
 	}
 	if (carry)
+	{
+		
 		out->dat[out->len] = carry;
+		out->len++;
+		
+	}
 }

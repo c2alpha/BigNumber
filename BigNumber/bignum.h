@@ -173,3 +173,22 @@ LIMB_t ShiftLeft_bit(D_BINT_t temp, D_BINT_t a, LIMB_t shift);
 LIMB_t ShiftRight_bit(D_BINT_t temp, D_BINT_t a, LIMB_t shift);
 int valid_test_div();
 void c_mod(D_BINT_t x, D_BINT_t y, D_BINT_t m);
+void padding(D_BINT_t a, LIMB_t len);
+void REDC(D_BINT_t A, D_BINT_t T);
+void Mont_mul(D_BINT_t A, D_BINT_t x, D_BINT_t y);
+void valid_test_mont();
+LIMB_t bin_gcd(D_BINT_t gcd, D_BINT_t x, D_BINT_t y);
+void ShiftLeft(D_BINT_t a, D_BINT_t b, int shift);
+void init_input_to_zero(D_BINT_t in);
+int is_even(D_BINT_t a);
+void ext_bin_gcd(D_BINT_t gcd, D_BINT_t x, D_BINT_t y, D_BINT_t a, D_BINT_t b);
+void valid_test_gcd();
+void RtoL(D_BINT_t A, D_BINT_t g, D_BINT_t e);
+void LtoR(D_BINT_t A, D_BINT_t g, D_BINT_t e);
+void k_ary(D_BINT_t A, D_BINT_t g, D_BINT_t e, LIMB_t k);
+void valid_bin_ext();
+void modified_k_ary(D_BINT_t A, D_BINT_t g, D_BINT_t e, LIMB_t k);
+void SlidingWindow(D_BINT_t A, D_BINT_t g, D_BINT_t e, LIMB_t k);
+void Mont_exp(D_BINT_t A, D_BINT_t g, D_BINT_t e);
+
+

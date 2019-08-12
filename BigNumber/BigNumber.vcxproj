@@ -138,29 +138,44 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <HeapReserveSize>10485760</HeapReserveSize>
+      <StackReserveSize>10485760</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addition.c" />
+    <ClCompile Include="Bin_gcd.c" />
     <ClCompile Include="Classic_mod.c" />
     <ClCompile Include="compare.c" />
     <ClCompile Include="core_add.c" />
     <ClCompile Include="core_sub.c" />
     <ClCompile Include="datcopy.c" />
     <ClCompile Include="divide.c" />
+    <ClCompile Include="Ext_Bin_gcd.c" />
     <ClCompile Include="Initialize.c" />
+    <ClCompile Include="k_ary.c" />
+    <ClCompile Include="LTR.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="modified_k_ary.c" />
+    <ClCompile Include="Mont_exp.c" />
+    <ClCompile Include="Mont_mul.c" />
+    <ClCompile Include="Mont_reduction.c" />
     <ClCompile Include="mpdivision.c" />
     <ClCompile Include="multiply.c" />
     <ClCompile Include="print_out.c" />
     <ClCompile Include="rand_gen.c" />
+    <ClCompile Include="RTL.c" />
     <ClCompile Include="shift.c" />
     <ClCompile Include="single_mult.c" />
     <ClCompile Include="single_div.c" />
+    <ClCompile Include="SlidingWin.c" />
     <ClCompile Include="square.c" />
     <ClCompile Include="subtraction.c" />
     <ClCompile Include="test_add_sub.c" />
+    <ClCompile Include="test_bin_exp.c" />
     <ClCompile Include="test_div.c" />
+    <ClCompile Include="test_gcd.c" />
+    <ClCompile Include="test_mont.c" />
     <ClCompile Include="test_mul_squa.c" />
   </ItemGroup>
   <ItemGroup>

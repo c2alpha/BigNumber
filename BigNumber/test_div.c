@@ -51,11 +51,16 @@ int valid_test_div()
 	//b->len = 2;
 	/*for (int i = b->len - 1; i >= 0; i--)
 		b->dat[i] = rand_gen();*/
-	while ((a->len < b->len) || b->len < 2)
+	/*while ((a->len < b->len) || b->len < 2)
 		{
 			init_input(a);
 			init_input(b);
-		}
+		}*/
+	while ((a->len < b->len) )
+	{
+		init_input(a);
+		init_input(b);
+	}
 	/*a->len = 5;
 	for (int i = a->len - 1; i >= 0; i--)
 		a->dat[i] = rand_gen();*/

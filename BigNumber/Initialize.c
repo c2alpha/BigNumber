@@ -9,7 +9,8 @@ void init_input(D_BINT_t in)
 {
 	//in->sig = (rand() % 3) - 1;
 	in->sig = POS_SIG;
-	in->len = (rand() % 30)+3;
+	//in->len = (rand() % 30)+1;
+	in->len = 32;
 	if (in->sig == ZERO_SIG)
 	{
 		in->len = 1;
@@ -27,8 +28,10 @@ void init_input_to_zero(D_BINT_t in)
 {
 	in->sig = ZERO_SIG;
 	in->len = 1;
-	memset(in->dat, 0, sizeof(LIMB_t)*in->len);
+	memset(in->dat, 0, sizeof(LIMB_t)*301);
 }
+
+
 
 //연산의 결과물이 들어갈 공간을 초기화 한다. 
 //최대 길이를 모두 0으로 채운다.

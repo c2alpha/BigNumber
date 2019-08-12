@@ -40,9 +40,10 @@ LIMB_t ShiftRight_bit(D_BINT_t temp, D_BINT_t a, LIMB_t shift)
 		temp->dat[i] = a->dat[i] >> shift | carry;
 		carry = nextcarry;
 	}
+	if (temp->dat[temp->len - 1] == 0)
+		temp->len--;
 	
-	//y에 대해서는 0이 return 될 것이지만(y를 기준으로 shift횟수 정함.)
-	//x에 대해서는 추가적인 공간이 필요할 수 있음.
+	
 	return carry;
 
 }
@@ -67,4 +68,40 @@ void ShiftLeft_word(D_BINT_t a,LIMB_t len)
 	}
 	copy(a, temp);
 
+}
+
+void ShiftLeft(D_BINT_t a, D_BINT_t b, int shift)
+{
+	LIMB_t dump;
+	LIMB_t word, bit;
+	D_BINT_t temp;
+	LIMB_t temp_dat[300] = { 0, };
+	temp->sig = b->sig;
+	temp->dat = temp_dat;
+	a->sig = b->sig;
+	int i;
+	if (shift >= BITSZ_WL)
+	{
+		//word단위 shift. shift가 32보다 크면 해야함
+		word = shift / BITSZ_WL;
+		for (i = b->len - 1; i >= 0; i--)
+		{
+			if (i >= word)
+				a->dat[i] = b->dat[i - word];
+
+			else
+				a->dat[i] = 0;
+		}
+		a->len = a->len + word;
+	}
+	else
+		copy(a, b);
+	bit = shift % BITSZ_WL;
+	//word 내에서 shift
+	temp->len = a->len;
+	if (bit)
+	{
+		ShiftLeft_bit(temp, a, bit);
+		copy(a, temp);
+	}
 }

@@ -10,26 +10,30 @@
 
 void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 {
-	//나눗셈 할 때 바꿈
-	//out->len = max(in1->len, in2->len) + 1;
+	//나눗셈 할 때 바꿈(나눗셈 할 땐 아래꺼)
+	D_BINT_t temp;
+	LIMB_t temp_dat[300] = { 0, };
+	temp->dat = temp_dat;
+
+	temp->len = max(in1->len, in2->len);
 	
-	out->len = max(in1->len, in2->len);
+	//out->len = max(in1->len, in2->len) + 1;
 
 	if (in1->sig == ZERO_SIG && in2->sig == ZERO_SIG)
 	{
-		out->sig = ZERO_SIG;
+		temp->sig = ZERO_SIG;
 	}
 	else if (in1->sig == POS_SIG && in2->sig == POS_SIG)
 	{
 		/*
 		 input 두개의 부호가 모두 양수이므로 결과의 부호를 양수로 하고 덧셈 수행
 		*/
-		out->sig = POS_SIG;
-		mpadd(out, in1, in2);
+		temp->sig = POS_SIG;
+		mpadd(temp, in1, in2);
 	}
 	else if (in1->sig == POS_SIG && in2->sig == ZERO_SIG)
 	{
-		copy(out, in1);
+		copy(temp, in1);
 	}
 	else if (in1->sig == POS_SIG && in2->sig == NEG_SIG)
 	{
@@ -40,13 +44,13 @@ void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 		*/
 		if (compare(in1, in2))
 		{
-			out->sig = NEG_SIG;
-			mpsub(out, in2, in1);
+			temp->sig = NEG_SIG;
+			mpsub(temp, in2, in1);
 		}
 		else
 		{
-			out->sig = POS_SIG;
-			mpsub(out, in1, in2);
+			temp->sig = POS_SIG;
+			mpsub(temp, in1, in2);
 		}
 
 	}
@@ -58,45 +62,52 @@ void Addition(D_BINT_t out, D_BINT_t in1, D_BINT_t in2)
 		*/
 		if (compare(in1, in2))
 		{
-			out->sig = POS_SIG;
-			mpsub(out, in2, in1);
+			temp->sig = POS_SIG;
+			mpsub(temp, in2, in1);
 		}
 		else
 		{
-			out->sig = NEG_SIG;
-			mpsub(out, in1, in2);
+			temp->sig = NEG_SIG;
+			mpsub(temp, in1, in2);
 		}
 	}
 	else if (in1->sig == NEG_SIG && in2->sig == ZERO_SIG)
 	{
-		copy(out, in1);
+		copy(temp, in1);
 	}
 	else if (in1->sig == NEG_SIG && in2->sig == NEG_SIG)
 	{
 		/*
 		 input 두개 모두 음수이므로 결과는 음수이고, 덧셈을 수행	
 		*/
-		out->sig = NEG_SIG;
-		mpadd(out, in1, in2);
+		temp->sig = NEG_SIG;
+		mpadd(temp, in1, in2);
 	}
 	else if (in1->sig == ZERO_SIG && in2->sig == POS_SIG)
 	{
-		copy(out, in2);
+		copy(temp, in2);
 	}
 	else if (in1->sig == ZERO_SIG && in2->sig == NEG_SIG)
 	{
-		copy(out, in2);
+		copy(temp, in2);
 	}
 
 	/* out의 상위 word에 0으로 차있으면 데이터를 지우고 len조정 */
-	while (!out->dat[out->len - 1])
-		out->len--;
-	if (!out->len)
+	int len;
+	len = temp->len - 1;
+	while ((len >= 0) && (!temp->dat[len]))
 	{
-		out->sig = ZERO_SIG;
-		out->len = 1;
-		out->dat[0] = 0;
+		len--;
+		temp->len--;
+
 	}
+	if (!temp->len)
+	{
+		temp->sig = ZERO_SIG;
+		temp->len = 1;
+		temp->dat[0] = 0;
+	}
+	copy(out, temp);
 		
 	
 	

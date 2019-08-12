@@ -2,6 +2,7 @@
 
 void c_mod(D_BINT_t x, D_BINT_t y, D_BINT_t m)
 {
+	
 	D_BINT_t mul;
 	D_BINT_t q;
 	D_BINT_t r;
